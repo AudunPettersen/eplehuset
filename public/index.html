@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nettbutikken nær deg</title>
+    <title>Eplehuset</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="/components/DbInsert.js"></script>
     <script src="/components/DbTable.js"></script>
@@ -15,11 +15,22 @@
 
 <body>
     <home-bar heading="Vårres nettbutikk" username="/myself">
-        <li data-link="/admin/varer">Admin</li>
-        <li data-link="varer">Katalog</li>
-        <li data-link="/users/login">Login</li>
-        <li data-link="/users/signup">Ny bruker</li>
+        <header>
+            <ul class="topnav">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="om.html">Om</a></li>
+                <li><a href="iPhone.html">iPhone</a></li>
+                <li><a href="iPad.html">iPad</a></li>
+                <li><a href="macbook.html">Macbook</a></li>
+                <li><a href="watch.html">Apple Watch</a></li>
+                <li class="right"><a href="kontakt.html">Kontakt oss</a></li>
+                <li class="right"><a href="/users/login.html">Logg inn</a></li>
+                <li class="right"><a href="/users/signup.html">Registrer deg</a></li>
+                <li class="right"><a href="/admin/bestilling.html">admin</a></li>
+            </ul>
+        </header>
     </home-bar>
+
 
     <h1 class="centered">Velkommen til butikken</h1>
     <main>
