@@ -44,3 +44,32 @@ body {
         float: none;
     }
 }
+
+#bilder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: auto;
+}
+
+#tekst-11promax {
+    top: 70%;
+    position: absolute;
+    left: 5%;
+}
+
+#tekst-11pro {
+    top: 70%;
+    position: absolute;
+    left: 38%;
+}
+
+#tekst-11 {
+    top: 70%;
+    position: absolute;
+    left: 72%;
+}
+
+
+
+
