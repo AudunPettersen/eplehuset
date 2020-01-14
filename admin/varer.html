@@ -16,14 +16,11 @@
 <body>
     <ul class="topnav">
         <li><a href="/index.html">Hjem</a></li>
-        <li class="right"><a href="/users/login.html">Logg inn</a></li>
-        <li class="right"><a href="/users/signup.html">Registrer deg</a></li>
         <li class="right"><a href="/admin/varer.html">Varer</a></li>
         <li class="right"><a href="/admin/bestilling.html">Bestilling</a></li>
     </ul>
     <br> <br> <br>
-    <home-bar heading="Nettbutikk" crumb="vare" getlinks="/htmlfiler/admin" username="/myself">
-    </home-bar>
+   
     <div id="admin">
         <div class="table">
             <db-table id="table" update="vare"  fields="vareid:hidden,navn,pris:number" delete="vare"
@@ -36,5 +33,6 @@
         </db-insert>
     </div>
 </body>
+
 
 </html>
