@@ -7,6 +7,10 @@
     grid-auto-rows: auto;
 }
 
+#bilde2 {
+    height: 90%;
+}
+
 #tekst-11promax {
     top: 70%;
     position: absolute;
