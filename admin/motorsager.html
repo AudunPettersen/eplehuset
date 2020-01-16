@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registrer bok</title>
+    <title>Registrer motorsag</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="/components/DbInsert.js"></script>
+    <script src="/components/DbUpdate.js"></script>
     <script src="/components/DbForeign.js"></script>
     <script src="/components/DbTable.js"></script>
     <script src="/components/Homebar.js"></script>
@@ -25,33 +26,29 @@
         <li class="right"><a href="/admin/motorsager.html">Motorsager</a></li>
     </ul>
     <div id="admin">
+
+        <db-foreign id="motorsag" label="Kategori:Motorsager" values="8" field="v.kategori"></db-foreign>
+
         <div class="table">
-            <db-table id="table2" 
-                fields="vareid:hidden,navn,gruppe" key="vareid"
-                update="vare"  delete="vare"  
-                sql="select v.*, k.navn as gruppe from vare v 
-                    left join vare k on (v.kategori = k.vareid) 
-                    where v.erkategori='t' order by k.navn,v.navn">
-                <span slot="caption">Kategorier</span>
-            </db-table>
-        </div>
-        <div class="table">
-            <db-table id="table1" 
-                connected="table2:v.kategori"
-                fields="vareid:hidden,navn,pris:number,gruppe" 
-                delete="vare" update="vare"  
-                sql="select v.*, k.navn as gruppe from vare v 
+            <db-table id="table1" connected="motorsag:v.kategori" key="vareid" fields="vareid:hidden,navn,pris:number,gruppe"
+                delete="vare" update="vare" sql="select v.*, k.navn as gruppe from vare v 
                 left join vare k on (v.kategori = k.vareid) ">
-                <span slot="caption">Varer i valgt kategori</span>
+                <span slot="caption">Motorsager</span>
             </db-table>
         </div>
-       
-        <db-insert class="table" id="form" fields="navn,pris:number,erkategori:checkbox" table="vare">
-            <span slot="heading">Registrer Vare</span>
-            <db-foreign label="kategori" field="kategori" foreign="vareid:kategori" table="vare"
-                sql="select vareid,navn as kategori from vare where erkategori = 't'">
+
+        <db-insert class="table" id="form" fields="navn,pris:number" table="vare">
+            <span slot="heading">Registrer Ny motorsag</span>
+            <db-foreign label="Kategori" field="kategori" foreign="vareid:kategori" table="vare"
+                sql="select vareid,navn as kategori from vare where vareid=8">
             </db-foreign>
         </db-insert>
+
+        <db-update class="table" id="update" key="vareid" connected="table1:vareid" update="true" fields="navn,pris:number" 
+            table="vare">
+            <span slot="heading">Rediger Motorsag</span>
+        </db-update>
+
     </div>
 </body>
 
