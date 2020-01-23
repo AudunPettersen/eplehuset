@@ -119,7 +119,8 @@ body {
 #mac {
   position: absolute;
   width: 80%;
-  top: 105%;
+  top: 115%;
+  left: 10%;
 }
 
 #ipadp {
