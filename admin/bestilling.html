@@ -32,7 +32,7 @@
 
             <db-insert id="form" fields="dato:date" table="bestilling">
                 <span slot="heading">Bestilling Vare</span>
-                <db-user id="kundeid" field="kundeid" label="Kundenr"></db-user>
+                <db-user id="kundeid" field="kundeid" label="Kundenr."></db-user>
             </db-insert>
             
 
@@ -42,14 +42,14 @@
                     <span slot="caption">Mine bestillinger</span>
                 </db-table>
 
-                <db-insert id="linje" fields="antall" foreign="vare.vareid:navn+pris"
-                    connected="bestilling:bestillingid" table="linje">
+                <db-insert id="linje" fields="antall:number" foreign="vare.vareid:varenavn+pris"
+                 table="linje">
                     <span slot="heading">Bestilling Vare</span>
                 </db-insert>
 
-                <db-table connected="bestilling:bestillingid" fields="linjeid:hidden,navn,antall:int,pris:money"
+                <db-table connected="bestilling:bestillingid" fields="linjeid:hidden,varenavn,antall:int,pris:money"
                     update="linje" delete="linje"
-                    sql="select l.*,v.navn,v.pris from linje l inner join vare v on (v.vareid = l.vareid)">
+                    sql="select l.*,v.varenavn,v.pris from linje l inner join vare v on (v.vareid = l.vareid)">
                     <span slot="caption">Varelinje</span>
                 </db-table>
 

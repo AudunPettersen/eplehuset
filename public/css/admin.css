@@ -106,3 +106,16 @@
           float: none;
       }
   }
+
+#form1 {
+  margin-top: 400px;
+  left: 200px;
+  position: absolute;
+ 
+}
+
+#form2 {
+  margin-top: 400px;
+  right: 450px;
+  position: absolute;
+}
