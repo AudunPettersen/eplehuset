@@ -1,32 +1,35 @@
+body {
+  font-family: sans-serif;
+}
 
+#top {
+height: 100vh;
+position: absolute;
+background-color: white;
+}
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-  }
-  
-  .price {
-    color: grey;
-    font-size: 22px;
-  }
-  
-  .card button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-  }
-  
-  .card button:hover {
-    opacity: 0.7;
-  }
+#ipad{
+width: 90vh;
+top: 80px;
+position: absolute;
+animation: slide 1s 1 alternate;
+animation-fill-mode: forwards;
+}
 
- 
+@keyframes slide {
+0% { left:-1000px; top: 80px;}
+100% {left: 20px; top: 80px;}
+}
+
+h1 {
+right: -330px;
+position: relative;
+top: 30px;
+}
+
+#knapp {
+position: relative;
+right: -650px; 
+width: 740px;
+top: 150px;
+}
