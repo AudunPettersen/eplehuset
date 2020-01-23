@@ -118,20 +118,21 @@ body {
 
 #mac {
   position: absolute;
-  width: 100%;
-  top: 105%;
+  width: 80%;
+  top: 115%;
+  left: 10%;
 }
 
 #ipadp {
   position: absolute;
-  top: 167%;
+  top: 173%;
   right: 20%;
 }
 
 
 #watchbilde {
   position: absolute;
-  top: 300%;
+  top: 303%;
   right: 35%;
 }
 
