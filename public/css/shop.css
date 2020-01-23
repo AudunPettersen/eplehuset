@@ -196,3 +196,11 @@ body {
       float: none;
   }
 }
+
+figure {
+  display: grid;
+}
+
+img {
+  grid-template-columns: (3, 1fr);
+}

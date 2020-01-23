@@ -29,6 +29,7 @@ CREATE TABLE  vare  (
    vareid  SERIAL PRIMARY KEY,
    varenavn  text unique NOT NULL,
    pris int default 0,
+   bilde text,
    kategoriid int not null
 );
 

@@ -54,8 +54,8 @@
                 </db-table>
 
                 <db-table id="total" connected="bestilling:bestillingid" fields="total:money" update="linje" 
-                                sql="select sum(coalesce(l.antall * v.pris,0)) as total
-                                from linje l inner join vare v on (v.vareid = l.vareid)">
+                            sql="select sum(coalesce(l.antall * v.pris,0)) as total
+                            from linje l inner join vare v on (v.vareid = l.vareid)">
                     <span slot="caption">Totalsum</span>
                 </db-table>
 

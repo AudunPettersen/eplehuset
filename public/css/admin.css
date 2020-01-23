@@ -108,14 +108,31 @@
   }
 
 #form1 {
-  margin-top: 400px;
+  margin-top: 600px;
   left: 200px;
   position: absolute;
  
 }
 
 #form2 {
-  margin-top: 400px;
+  margin-top: 600px;
   right: 450px;
   position: absolute;
+}
+
+#bildekort {
+  position: absolute;
+  margin-top: 800px;
+  margin-left: 100px;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+#update {
+  margin-top: 300px;
+  position: absolute;
+  margin-left: 150px;
 }

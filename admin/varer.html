@@ -9,8 +9,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="/components/DbInsert.js"></script>
     <script src="/components/DbForeign.js"></script>
+    <script src="/components/DbList.js"></script>
     <script src="/components/DbTable.js"></script>
     <script src="/components/Homebar.js"></script>
+    <script src="/components/DbUpdate.js"></script>
     <link rel="stylesheet" href="/css/admin.css">
 </head>
 
@@ -32,11 +34,12 @@
                update="vare" fields="vareid:hidden,varenavn,pris:money,kategorinavn" delete="vare"
                 sql="select v.vareid, v.varenavn, v.pris, k.kategorinavn from vare v inner join kategori k on (v.kategoriid=k.kategoriid)">
                 <span slot="caption">Varer</span>
+                
             </db-table>
         </div>
 
        
-        <db-insert class="table" id="form" fields="varenavn,pris:number" table="vare"
+        <db-insert class="table" id="form" fields="varenavn,pris:number,bilde" table="vare"
             foreign="kategori.kategoriid:kategorinavn">
             <span slot="heading">Registrer Vare</span>
         </db-insert>
@@ -49,7 +52,7 @@
 
         <div class="table">
             <db-table id="form2"
-               update="kategori" fields="kategoriid:hidden,kategorinavn,antall" delete="kategori"
+                update="kategori" fields="kategoriid:hidden,kategorinavn,antall" delete="kategori"
                 sql="select k.kategoriid, k.kategorinavn, count(v.vareid) as antall 
                 from kategori k left join vare v on (k.kategoriid=v.kategoriid)
                 group by k.kategoriid order by antall desc">
@@ -57,6 +60,27 @@
             </db-table>
         </div>
 
+        <db-update id="update" key="vareid" update="true" fields="varenavn,pris:money,bilde"
+        table="vare">
+        <span slot="heading">Rediger Vare</span>
+    </db-update>
+
+
+
+        <div id="bildekort">
+            <h2>Varer</h2>
+            <db-list id="list" cssimport="/css/admin.css" update="vare" fields="varenavn,pris,bilde,kategorinavn"
+                sql="select * from vare">
+                <div>
+                    <figure>
+                        <img id="bilder" src="/media/${bilde}">
+                        <figcaption> ${varenavn} ${pris}</figcaption>
+                    </figure>
+                    
+                </div>
+
+            </db-list>
+        </div>
         
 
     </div>
