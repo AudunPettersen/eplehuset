@@ -1,7 +1,3 @@
-body {
-    margin: 0;
-  }
-  
 
 body {
     font-family: sans-serif;
@@ -88,3 +84,20 @@ h2 {
     color: black;
 }
 
+#admin {
+  position: absolute;
+  top: 130%;
+}
+
+#bildekort1 {
+  top: 400px;
+  position: absolute;
+}
+
+.centered {
+  right: 100px;
+}
+
+#admin {
+  height: 1000px;
+}

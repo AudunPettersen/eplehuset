@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registrer bok</title>
+    <title>Varer</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="/components/DbInsert.js"></script>
     <script src="/components/DbForeign.js"></script>
@@ -26,6 +26,9 @@
         <li class="right"><a href="/admin/varetest.html">Varetest</a></li>
         <li class="right"><a href="/admin/motorsager.html">Motorsager</a></li>
     </ul>
+   
+    <h1>Varer</h1>
+   
     <div id="admin">
         
     
@@ -46,7 +49,6 @@
 
         
         <db-insert id="form1" class="table" fields="kategorinavn" table="kategori" update="kategori">
-            
             <span slot="heading">Registrer Kategori</span>
         </db-insert>
 
@@ -60,20 +62,19 @@
             </db-table>
         </div>
 
-        <db-update id="update" key="vareid" update="true" fields="varenavn,pris:money,bilde"
-        table="vare">
+        <db-update id="update" key="vareid"  update="vare" fields="varenavn,pris:money,bilde" table="vare">
         <span slot="heading">Rediger Vare</span>
     </db-update>
 
 
 
         <div id="bildekort">
-            <h2>Varer</h2>
+            <h2>Bilder:</h2>
             <db-list id="list" cssimport="/css/admin.css" update="vare" fields="varenavn,pris,bilde,kategorinavn"
                 sql="select * from vare">
                 <div>
                     <figure>
-                        <img id="bilder" src="/media/${bilde}">
+                        <img id="bilder" width="200px" src="/media/${bilde}">
                         <figcaption> ${varenavn} ${pris}</figcaption>
                     </figure>
                     

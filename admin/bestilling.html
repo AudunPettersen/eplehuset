@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registrer forfatter</title>
+    <title>Bestilling</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="/components/DbUser.js"></script>
     <script src="/components/DbInsert.js"></script>
@@ -27,29 +27,29 @@
         <li class="right"><a href="/admin/motorsager.html">Motorsager</a></li>
     </ul>
     
-    <h1 class=" centered">Mine Bestillinger</h1>
+    <h1 class="centered">Bestillinger</h1>
         <div id="admin">
 
-            <db-insert id="form" fields="dato:date" table="bestilling">
-                <span slot="heading">Bestilling Vare</span>
-                <db-user id="kundeid" field="kundeid" label="Kundenr."></db-user>
-            </db-insert>
+                <db-insert id="form" fields="dato:date" table="bestilling" foreign="kunde.kundeid"  >
+                        <span slot="heading">Bestilling Vare</span>
+                    </db-insert>
+
             
 
             <div class="table">
-                <db-table connected="kundeid:kundeid" id="bestilling" update="bestilling" key="bestillingid"
+                <db-table id="bestilling" update="bestilling" key="bestillingid"
                     fields="bestillingid:number,dato:date" delete="bestilling" sql="select * from bestilling">
                     <span slot="caption">Mine bestillinger</span>
                 </db-table>
 
-                <db-insert id="linje" fields="antall:number" foreign="vare.vareid:varenavn+pris"
-                 table="linje">
+                <db-insert id="linje" fields="antall" foreign="vare.vareid:varenavn+pris"
+                connected="bestilling:bestillingid" table="linje">
                     <span slot="heading">Bestilling Vare</span>
                 </db-insert>
 
                 <db-table connected="bestilling:bestillingid" fields="linjeid:hidden,varenavn,antall:int,pris:money"
                     update="linje" delete="linje"
-                    sql="select l.*,v.varenavn,v.pris from linje l inner join vare v on (v.vareid = l.vareid)">
+                    sql="select l.*, v.varenavn, v.pris from linje l inner join vare v on (v.vareid = l.vareid)">
                     <span slot="caption">Varelinje</span>
                 </db-table>
 
@@ -63,7 +63,7 @@
                 cssimport="/css/admin.css" service="/runsql" 
                 sql="select coalesce(sum(l.antall * v.pris),0) as total
                 from linje l inner join vare v on (v.vareid = l.vareid)">
-                    <div class="total">Totalsummen blir ${total} kr</div>
+                    <div class="total"></div>
                 </db-list>
 
             </div>

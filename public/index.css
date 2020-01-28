@@ -45,7 +45,7 @@ ul.topnav li.right {
   background-color: black;
 }
 #toppic {
-  top: 60px;
+  top: 80px;
   height: 15%;
   left: 2%;
   position: absolute;
@@ -150,4 +150,10 @@ body {
   right: 45%;
   top: 393vh;
   width: 150px;
+}
+
+#mainpicture {
+  width: 100%;
+  position: absolute;
+  top: 10px;
 }

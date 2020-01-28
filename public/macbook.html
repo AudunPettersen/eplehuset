@@ -10,7 +10,9 @@
     <script src="/components/DbInsert.js"></script>
     <script src="/components/DbTable.js"></script>
     <script src="/components/Homebar.js"></script>
-    <link rel="stylesheet" href="/css/shop.css">
+    <script src="/components/DbUser.js"></script>
+    <script src="/components/DbList.js"></script>
+    <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
     <home-bar username="/myself"></home-bar>
@@ -54,7 +56,119 @@
         </ul>
 
 
-    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        
+        <h1 class="centered">Bestillinger</h1>
+            <div id="admin">
+    
+                <db-insert id="form" fields="dato:date" table="bestilling">
+                    <span slot="heading">Bestilling Vare</span>
+                    <db-user id="kundeid" field="kundeid" label="Kundenr."></db-user>
+                </db-insert>
+                
+    
+                <div class="table">
+                    <db-table connected="kundeid:kundeid" id="bestilling" update="bestilling" key="bestillingid"
+                        fields="bestillingid:number,dato:date" delete="bestilling" sql="select * from bestilling">
+                        <span slot="caption">Mine bestillinger</span>
+                    </db-table>
+    
+                    <db-insert id="linje" fields="antall" foreign="vare.vareid:varenavn+pris"
+                    connected="bestilling:bestillingid" table="linje">
+                        <span slot="heading">Bestilling Vare</span>
+                    </db-insert>
+    
+                    <db-table id="varelinje" connected="bestilling:bestillingid" fields="linjeid:hidden,varenavn,antall:int,pris:money"
+                        update="linje" delete="linje"
+                        sql="select l.*, v.varenavn, v.pris from linje l inner join vare v on (v.vareid = l.vareid)">
+                        <span slot="caption">Varelinje</span>
+                    </db-table>
+    
+                    <db-table id="total" connected="bestilling:bestillingid" fields="total:money" update="linje" 
+                                sql="select sum(coalesce(l.antall * v.pris,0)) as total
+                                from linje l inner join vare v on (v.vareid = l.vareid)">
+                        <span slot="caption">Totalsum</span>
+                    </db-table>
+    
+                    <db-list connected="bestilling:bestillingid" update="linje"
+                    cssimport="/css/admin.css" service="/runsql" 
+                    sql="select coalesce(sum(l.antall * v.pris),0) as total
+                    from linje l inner join vare v on (v.vareid = l.vareid)">
+                        <div class="total"></div>
+                    </db-list>
+    
+                </div>
+               <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+                
+                
+                <div id="bildekort1">
+                        <h2 class="centered">Våre Macbook-modeller:</h2>
+                    <db-list id="list" cssimport="/css/admin.css" update="vare" fields="varenavn,pris,bilde,kategorinavn"
+                        sql="select * from vare v inner join kategori k on (k.kategoriid=v.kategoriid) where kategorinavn = 'Macbook' ">
+                        <div>
+                            <figure>
+                                <img id="bilder" width="500px" src="/media2/Macbook/${bilde}">
+                                <figcaption> ${varenavn} ${pris}</figcaption>
+                            </figure>
+                            
+                        </div>
+
+                
+    
+            </div>
         </div>
+        
+
 </body>
 </html>

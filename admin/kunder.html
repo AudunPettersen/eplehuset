@@ -24,6 +24,7 @@
         <li class="right"><a href="/admin/varetest.html">Varetest</a></li>
         <li class="right"><a href="/admin/motorsager.html">Motorsager</a></li>
     </ul>
+    <h1>Kunder</h1>
     <div id="admin">
 
         
@@ -39,8 +40,8 @@
         </db-update>
 
         <div class="table">
-            <db-table id="table" update="kunde" fields="kundeid:hidden,fornavn,etternavn,adresse,epost,kjonn,tlf" delete="kunde"
-                sql="select * from kunde">
+            <db-table id="table" update="kunde" fields="kundeid:hidden,fornavn,etternavn,adresse,epost,kjonn,tlf"
+                delete="kunde" sql="select * from kunde">
                 <span slot="caption">Kunder</span>
             </db-table>
         </div>

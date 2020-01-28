@@ -8,7 +8,7 @@ h1 {
   left: 41%;
 }
 
-h2 {
+#series {
   position: absolute;
   left: 44%;
   top: 15%;
@@ -50,4 +50,19 @@ h2 {
   top: 150%;
   width: 80%;
   left: 8%;
+}
+
+#admin {
+  position: absolute;
+  top: 250%;
+}
+
+#ned {
+  position: absolute;
+  top: 230%;
+}
+
+#bildekort1 {
+  position: absolute;
+  margin-top: 400px;
 }
