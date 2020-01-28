@@ -1,0 +1,117 @@
+body {
+    background-color: mediumspringgreen;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+h2 {
+    color: blue;
+    text-align: center;
+}
+
+#deltakere {
+    background-color: white;
+    margin: 60px;
+    padding: 20px;
+}
+
+#hensikt {
+    background-color: white;
+    margin: 60px;
+    padding: 20px;
+}
+
+#Kart {
+    background-color: white;
+    margin: 60px;
+    padding: 20px;
+}
+
+#Database-diagram {
+    background-color: white;
+    margin: 60px;
+    padding: 20px;
+}
+
+#grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". . in . ."
+    ". . pu . ."
+    "ph  ipa  mac  wa om"
+    ". . ad . ."
+    "be ku us va .";
+    border: solid black 0.5px;
+}
+
+#index {
+    grid-area: in;
+    border: solid black 0.5px;
+}
+
+#public {
+    grid-area: pu;
+    border: solid black 0.5px;
+}
+
+#iPhone {
+    grid-area: ph;
+    border: solid black 0.5px;
+}
+
+#iPad {
+    grid-area: ipa;
+    border: solid black 0.5px;
+}
+
+#MacBook {
+    grid-area: mac;
+    border: solid black 0.5px;
+}
+
+#Applewatch {
+    grid-area: wa;
+    border: solid black 0.5px;
+}
+
+#om {
+    grid-area: om;
+    border: solid black 0.5px;
+}
+
+#Admin {
+    grid-area: ad;
+    border: solid black 0.5px;
+}
+
+#bestilling {
+    grid-area: be;
+    border: solid black 0.5px;
+}
+
+#kunder {
+    grid-area: ku;
+    border: solid black 0.5px;
+}
+
+#users {
+    grid-area: us;
+    border: solid black 0.5px;
+}
+
+#varer {
+    grid-area: va;
+    border: solid black 0.5px;
+}
+
+#grid > div {
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+}
