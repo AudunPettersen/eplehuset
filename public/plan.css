@@ -1,14 +1,14 @@
 body {
-    background-color: mediumspringgreen;
+    background-color: darkgrey;
 }
 
 h1 {
-    color: blue;
+    color: black;
     text-align: center;
 }
 
 h2 {
-    color: blue;
+    color: black;
     text-align: center;
 }
 
@@ -34,6 +34,13 @@ h2 {
     background-color: white;
     margin: 60px;
     padding: 20px;
+}
+
+#liveshare {
+    width: 1000px;
+    height: 700px;
+    position: relative;
+    left: 10%;
 }
 
 #grid {
