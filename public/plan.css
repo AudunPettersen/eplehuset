@@ -36,6 +36,13 @@ h2 {
     padding: 20px;
 }
 
+#liveshare {
+    width: 1000px;
+    height: 700px;
+    position: relative;
+    left: 10%;
+}
+
 #grid {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
