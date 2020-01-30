@@ -20,6 +20,7 @@ class HomeBar extends HTMLElement {
                 <li><a href="/iPad.html">iPad</a></li>
                 <li><a href="/macbook.html">Macbook</a></li>
                 <li><a href="/watch.html">Apple Watch</a></li>
+                <li><a href="plan.html">Plan</a></li>
                 <li class="right"><a href="/kontakt.html">Kontakt oss</a></li>
                 <li class="right"><a href="/users/login.html">Logg inn</a></li>
                 <li class="right"><a href="/users/signup.html">Registrer deg</a></li>
