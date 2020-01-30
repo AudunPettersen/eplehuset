@@ -40,8 +40,8 @@ h2 {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
-    ". . in . ."
     ". . pu . ."
+    ". . in . ."
     "ph  ipa  mac  wa om"
     ". . ad . ."
     "be ku us va .";
