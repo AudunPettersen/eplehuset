@@ -8,6 +8,8 @@ DROP TABLE IF EXISTS vare cascade;
 DROP TABLE IF EXISTS bestilling cascade;
 DROP TABLE IF EXISTS linje cascade;
 DROP TABLE IF EXISTS kategori cascade;
+DROP TABLE IF EXISTS users cascade;
+
 
 
 CREATE TABLE users (
