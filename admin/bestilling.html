@@ -28,11 +28,9 @@
     <h1 class="centered">Bestillinger</h1>
         <div id="admin">
 
-                <db-insert id="form" fields="dato:date" table="bestilling" foreign="kunde.kundeid"  >
+                <db-insert id="form" fields="dato:date" table="bestilling" foreign="kunde.kundeid:fornavn+etternavn"  >
                         <span slot="heading">Bestilling Vare</span>
                     </db-insert>
-
-            
 
             <div class="table">
                 <db-table id="bestilling" update="bestilling" key="bestillingid"
@@ -44,6 +42,12 @@
                 connected="bestilling:bestillingid" table="linje">
                     <span slot="heading">Bestilling Vare</span>
                 </db-insert>
+
+                <db-table connected="bestilling:bestillingid" fields="kundeid:hidden,fornavn,etternavn,adresse"
+                    update="kunde"
+                    sql="select * from kunde k inner join bestilling b on (k.kundeid=b.kundeid)">
+                    <span slot="caption">Kunde</span>
+                </db-table>
 
                 <db-table connected="bestilling:bestillingid" fields="linjeid:hidden,varenavn,antall:int,pris:money"
                     update="linje" delete="linje"

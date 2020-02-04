@@ -69,3 +69,5 @@ alter table kunde owner to eple;
 alter table linje owner to eple;
 alter table users owner to eple;
 alter table kategori owner to eple;
+
+grant insert, delete, update, select on vare, kategori, linje, bestilling to public
