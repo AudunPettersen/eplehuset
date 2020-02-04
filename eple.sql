@@ -1,3 +1,8 @@
+create role eple password '123'; 
+alter role eple with login;          
+create database eple owner eple;     
+
+
 DROP TABLE IF EXISTS kunde cascade;
 DROP TABLE IF EXISTS vare cascade;
 DROP TABLE IF EXISTS bestilling cascade;

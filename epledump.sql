@@ -286,7 +286,10 @@ ALTER TABLE ONLY public.vare ALTER COLUMN vareid SET DEFAULT nextval('public.var
 
 COPY public.bestilling (bestillingid, dato, kundeid) FROM stdin;
 21	2020-01-29	15
-22	2010-01-01	15
+24	2020-02-03	18
+25	2020-01-03	17
+26	2020-01-03	15
+27	2020-02-03	18
 \.
 
 
@@ -307,9 +310,9 @@ COPY public.kategori (kategoriid, kategorinavn) FROM stdin;
 --
 
 COPY public.kunde (kundeid, fornavn, etternavn, adresse, epost, tlf, kjonn, userid) FROM stdin;
-15	admin	admin	\N	\N	\N	\N	1
 17	Audun	Pettersen	Brakahaug 4	audun1@gmail.com	98123131	m	5
 18	Kristian	Reinertsen	Svehaug 4	kristian@gmail.com	33482094	m	6
+15	admin	admin					1
 \.
 
 
@@ -320,8 +323,20 @@ COPY public.kunde (kundeid, fornavn, etternavn, adresse, epost, tlf, kjonn, user
 COPY public.linje (linjeid, antall, vareid, bestillingid) FROM stdin;
 55	1	51	21
 56	2	41	21
-57	2	41	22
-58	1	40	22
+64	1	53	24
+65	1	51	25
+66	2	41	25
+67	1	39	25
+68	1	40	25
+71	2	41	24
+72	1	40	24
+73	1	51	26
+74	1	40	26
+75	2	53	26
+76	1	39	26
+77	3	39	27
+78	2	53	27
+79	1	51	27
 \.
 
 
@@ -353,42 +368,42 @@ COPY public.vare (vareid, varenavn, pris, bilde, kategoriid) FROM stdin;
 -- Name: bestilling_bestillingid_seq; Type: SEQUENCE SET; Schema: public; Owner: eple
 --
 
-SELECT pg_catalog.setval('public.bestilling_bestillingid_seq', 22, true);
+SELECT pg_catalog.setval('public.bestilling_bestillingid_seq', 27, true);
 
 
 --
 -- Name: kategori_kategoriid_seq; Type: SEQUENCE SET; Schema: public; Owner: eple
 --
 
-SELECT pg_catalog.setval('public.kategori_kategoriid_seq', 32, true);
+SELECT pg_catalog.setval('public.kategori_kategoriid_seq', 33, true);
 
 
 --
 -- Name: kunde_kundeid_seq; Type: SEQUENCE SET; Schema: public; Owner: eple
 --
 
-SELECT pg_catalog.setval('public.kunde_kundeid_seq', 18, true);
+SELECT pg_catalog.setval('public.kunde_kundeid_seq', 31, true);
 
 
 --
 -- Name: linje_linjeid_seq; Type: SEQUENCE SET; Schema: public; Owner: eple
 --
 
-SELECT pg_catalog.setval('public.linje_linjeid_seq', 58, true);
+SELECT pg_catalog.setval('public.linje_linjeid_seq', 79, true);
 
 
 --
 -- Name: users_userid_seq; Type: SEQUENCE SET; Schema: public; Owner: eple
 --
 
-SELECT pg_catalog.setval('public.users_userid_seq', 6, true);
+SELECT pg_catalog.setval('public.users_userid_seq', 7, true);
 
 
 --
 -- Name: vare_vareid_seq; Type: SEQUENCE SET; Schema: public; Owner: eple
 --
 
-SELECT pg_catalog.setval('public.vare_vareid_seq', 53, true);
+SELECT pg_catalog.setval('public.vare_vareid_seq', 54, true);
 
 
 --
