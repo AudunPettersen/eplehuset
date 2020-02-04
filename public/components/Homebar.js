@@ -88,7 +88,7 @@ body {
     font-family: sans-serif;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     ul.topnav li.right, ul.topnav li {
         float: none;
     }
